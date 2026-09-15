@@ -1,0 +1,9 @@
+services:
+  recon-lab:
+    build: .
+    image: recon-lab:latest
+    container_name: recon-lab
+    ports:
+      - "8080:80"     # hedef site: feysbook (not fake)
+      - "1337:1337"   # CTF paneli: flag gonderme
+    restart: unless-stopped
