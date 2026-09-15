@@ -51,10 +51,12 @@ $pct = (int)round($solved / $TOTAL * 100);
 <div class="scan"></div>
 <main class="wrap">
   <header class="hd">
-    <div class="logo">feysbook<span>_ctf</span></div>
-    <div class="sub">web enumeration lab &mdash; hedef: <code>http://localhost:8080</code></div>
+    <div class="hd-left">
+      <div class="logo">feysbook<span>_ctf</span></div>
+      <div class="sub">web enumeration lab &mdash; hedef: <code>http://localhost:8080</code></div>
+    </div>
     <div class="tools">
-      <a class="dl" href="/common.txt" download="common.txt">⬇ gobuster wordlist'ini indir (common.txt)</a>
+      <a class="dl" href="/common.txt" download="common.txt">wordlist indir</a>
     </div>
   </header>
 
