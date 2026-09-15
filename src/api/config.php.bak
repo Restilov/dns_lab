@@ -1,0 +1,15 @@
+<?php
+// Feysbook Graph API - database configuration
+// TODO: move secrets to environment variables before production!
+
+define('DB_HOST', '10.13.37.21');
+define('DB_PORT', 3306);
+define('DB_NAME', 'feysbook_prod');
+define('DB_USER', 'fb_api_svc');
+define('DB_PASS', 'S0c14l_N3tw0rk_2024!');
+
+define('JWT_SECRET', 'a7f3c9e1b2d84f60a1c5e7d9b3f2a6c8');
+define('ADMIN_EMAIL', 'root@feysbook.local');
+
+// Deployment flag - remove before launch
+define('DEPLOY_FLAG', 'FLAG{b4ckup_f1l3s_4r3_g0ld}');

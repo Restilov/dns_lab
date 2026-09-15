@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /internal-backup/
+Disallow: /messages/
+Disallow: /tmp/
+Disallow: /old-site/

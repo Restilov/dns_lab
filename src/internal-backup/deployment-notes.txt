@@ -1,0 +1,11 @@
+Feysbook - Internal deployment notes (DO NOT DISTRIBUTE)
+========================================================
+
+User-data migration checklist
+
+- Old profile photos moved to new storage bucket.
+- Legacy signup flow disabled on demo instance.
+- FLAG{r0b0ts_txt_r3v34ls_p4ths}
+
+<!-- NOTE from ops: the old moderation dashboard was moved to /admin-panel/ during
+     the last migration. Remember to take it offline before launch. -->
