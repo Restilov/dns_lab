@@ -7,7 +7,8 @@ $FLAGS = [
   ['title' => 'robots.txt',           'phase' => 'Pasif',  'hash' => 'f39df07f24e19a44fa940694dd670d65a6bf44ece30e70283f8a6fd569fddd3a'],
   ['title' => 'Linklenmemiş Sayfa',   'phase' => 'Aktif',  'hash' => 'f15f773b6aa0530efbf169bc51568a7beb5c44f0b8f714c67b155dcd2190c2b8'],
   ['title' => 'Dizin Brute-force',    'phase' => 'Aktif',  'hash' => '7d48b44f2b23294b8b261efbff833bd59b375b249df9614a68b6c30440d86d28'],
-  ['title' => 'Yedek/Config Dosyası', 'phase' => 'Final',  'hash' => 'aa0112598d7e18931711f57dde9eb31c556c15670bd71fac420731c69f625a1c'],
+  ['title' => '???', 'phase' => 'Final', 'hash' => 'fd21cc3cb5062bc4ac714c489e1ca0e37a577c19ba23b0d00e9767f598d37636',
+   'question' => 'ARPANET hangi yılda kuruldu?', 'placeholder' => 'yıl (örn. 19XX)'],
 ];
 $TOTAL = count($FLAGS);
 
@@ -97,9 +98,12 @@ $pct = (int)round($solved / $TOTAL * 100);
           </span>
         </div>
         <?php if ($state === 'active'): ?>
+          <?php if (!empty($f['question'])): ?>
+            <p class="question"><?= htmlspecialchars($f['question']) ?></p>
+          <?php endif; ?>
           <form method="post" class="flag-form" autocomplete="off">
             <input type="hidden" name="idx" value="<?= $i ?>">
-            <input type="text" name="flag" placeholder="FLAG{...}" autofocus>
+            <input type="text" name="flag" placeholder="<?= htmlspecialchars($f['placeholder'] ?? 'FLAG{...}') ?>" autofocus>
             <button type="submit">Gönder</button>
           </form>
         <?php elseif ($state === 'done'): ?>

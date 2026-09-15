@@ -76,3 +76,6 @@ code{background:var(--panel2);padding:1px 6px;border-radius:4px;color:var(--gree
   border:1px solid var(--green);color:var(--green);border-radius:6px;padding:10px 18px;
   font-family:inherit;font-size:.9rem;font-weight:700;text-decoration:none;transition:background .15s;white-space:nowrap}
 .dl:hover{background:rgba(159,239,0,.25);text-decoration:none}
+
+/* Final soru metni */
+.question{margin:14px 0 0;color:var(--amber);font-size:.92rem;font-weight:700}

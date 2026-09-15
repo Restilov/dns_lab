@@ -25,7 +25,7 @@ Flag zinciri sunumun bölümlerini takip eder:
 | FLAG 2 | **Pasif** | robots.txt → dizin listeleme |
 | FLAG 3 | **Aktif** | Linklenmemiş sayfa (HTML yorumundan ipucu) |
 | FLAG 4 | **Aktif** | Dizin brute-force (gobuster) |
-| FLAG 5 | **Final** | Yedek/config dosyası sızıntısı |
+| FLAG 5 | **Final** | Yedek dosya sızıntısı + "???" bilgi sorusu (ARPANET) |
 
 ---
 
@@ -35,7 +35,7 @@ Flag zinciri sunumun bölümlerini takip eder:
 2. `FLAG{r0b0ts_txt_r3v34ls_p4ths}`
 3. `FLAG{unl1nk3d_1s_n0t_h1dd3n}`
 4. `FLAG{d1r_brut3f0rc3_w1ns}`
-5. `FLAG{b4ckup_f1l3s_4r3_g0ld}`
+5. **1969** (ARPANET'in kuruluş yılı — panel "???" adımı, flag değil bilgi sorusu)
 
 ---
 
@@ -163,8 +163,12 @@ sahte veritabanı bilgileri açığa çıkar:
 ```php
 define('DB_PASS', 'S0c14l_N3tw0rk_2024!');
 define('JWT_SECRET', 'a7f3c9e1b2d84f60a1c5e7d9b3f2a6c8');
-define('DEPLOY_FLAG', 'FLAG{b4ckup_f1l3s_4r3_g0ld}');
+// Son adim (???) bir tarih soruyor: ARPANET'in kuruldugu yil.
 ```
+
+**Son adımın cevabı bir flag değil, bir bilgi sorusudur.** Panelin 5. kutusu "???" olarak
+görünür; açılınca **"ARPANET hangi yılda kuruldu?"** diye sorar. Doğru cevap: **1969**.
+(config.php.bak dosyasındaki yorum bu soruya yönlendirir.)
 
 **Ders:** `config.php` çalıştırılıp gizli kalır; ama `config.php.bak`, `.old`, `.swp`, `~`
 gibi yedekler sunucu tarafından kaynak koduyla birlikte servis edilir. Gerçek dünyada bu,
@@ -187,7 +191,7 @@ gobuster dir -u http://localhost:8080 -w common.txt              # -> /api bulun
 curl http://localhost:8080/api/                                  # FLAG 4 (+ .bak ipucu)
 
 # --- FINAL ---
-curl http://localhost:8080/api/config.php.bak                    # FLAG 5
+curl http://localhost:8080/api/config.php.bak   # .bak sizar; final panel sorusu: ARPANET yili = 1969
 ```
 
 ## Sıfırlama
